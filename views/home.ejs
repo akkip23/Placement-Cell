@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="student-data">
+    <div id="stdList-title">
+        <h1>List of Students</h1>
+        <a href="/collection/newStudent"><button>Add Student +</button></a>
+    </div>
+    <table>
+        <tr>
+            <th>Batch</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>DSA</th>
+            <th>WEB</th>
+            <th>REACT</th>
+            <th>Interview</th>
+            <th>Action</th>
+        </tr>
+        <tbody>
+            <% for(student of studentData){ %>
+                <tr id="<%= student.id %>">
+
+                    <td>
+                        <%= student.batch %>
+                    </td>
+                    <td>
+                        <%= student.name %>
+                    </td>
+                    <td>
+                        <%= student.email %>
+                    </td>
+                    <td>
+                        <%= student.mobile %>
+                    </td>
+                    <td>
+                        <%= student.dsa_marks %>
+                    </td>
+                    <td>
+                        <%= student.web_dev %>
+                    </td>
+                    <td>
+                        <%= student.react %>
+                    </td>
+                    <td>
+                        <% if(student.interview.length !=0){ %>
+                            <a href="/collection/ScheduledInterviews">Scheduled</a>
+                            <% }else{ %>
+                                <a href="/collection/scheduleInterview">Not Scheduled</a>
+                                <% } %>
+                    </td>
+                    <td class="delete-student-data">
+                        <a href="/collection/deleteStudentData/<%= student.id %>"><i id="<%= student.id %>"
+                                class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,63 @@
+#header-container {
+  background: linear-gradient(181deg, #d38888, #00000080);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 97%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.4rem 20px;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+#signUp,
+#loginIn {
+  color: white;
+  padding: 0 10px;
+}
+
+#signOut h3 a{
+  background: red;
+  padding: 5px 15px;
+  border-radius: 500px;
+}
+
+#loggedIn_user a h4{
+  font-size: 1.1rem;
+}
+
+#Applogo img{
+    width: 3rem;
+}
+
+#searchBar {
+  margin-top: 10px;
+  background-color: #242424;
+  border: 0;
+  border-radius: 500px;
+  font-size: 15px;
+  color: #fff !important;
+  height: 30px;
+  padding: 6px 36px;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+#loginSessions_Create {
+  display: flex;
+}
+
+#loginSessions_Create > div {
+margin-right: 15px;
+}
+
+#placement{
+  padding: 5px;
+}
+
+#header-container a{
+  text-decoration: none;
+  color: white;
+}
+

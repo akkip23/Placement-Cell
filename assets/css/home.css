@@ -1,0 +1,57 @@
+#stdList-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#stdList-title h1 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+#stdList-title button {
+  border: 0;
+  outline: none;
+  background-color: #4caf50;
+  padding: 0.7rem 1rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+#stdList-title button:hover {
+  background-color: #45a049;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#student-data {
+  padding: 0px 20px;
+}
+
+.delete-student-data i{
+  color: red;
+  font-size: 1.2rem;
+}
+
+#update-user-interviewData i{
+  font-size: 1.2rem;
+  color: darkblue;
+}

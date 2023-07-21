@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="student-data">
+    <div id="stdList-title">
+        <h1>Schedule Interviews</h1>
+        <a href="/collection/scheduleInterview"><button>Schedule Interviews +</button></a>
+    </div>
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Batch</th>
+            <th>Schedule On</th>
+            <th>Results</th>
+            <th></th>
+        </tr>
+        <tbody>
+
+            <% for(let i=0; i < allocatedInterviews.length; i++){ %>
+                <% if(allocatedInterviews[i].interview.length> 0){ %>
+                    <tr id="<%= allocatedInterviews[i].id %>">
+
+                        <td>
+                            <b>
+                                <%= allocatedInterviews[i].interview.map((data)=> data.Company).join(", ") %>
+                            </b>
+                        </td>
+                        <td>
+                            <%= allocatedInterviews[i].name %>
+                        </td>
+                        <td>
+                            <%= allocatedInterviews[i].email %>
+                        </td>
+                        <td>
+                            <%= allocatedInterviews[i].mobile %>
+                        </td>
+                        <td>
+                            <%= allocatedInterviews[i].batch %>
+                        </td>
+                        <td>
+                            <%= allocatedInterviews[i].interview.map((data)=> data.date).join(", ") %>
+                        </td>
+                        <td>
+                            <select id="isPlaced" name="placement" required>
+
+                                <option value="Placed" <% if (allocatedInterviews[i].placement==="Placed" ) { %>
+                                    selected <% } %>>Placed</option>
+                                <option value="Not Placed" <% if (allocatedInterviews[i].placement==="Not Placed" ) { %>
+                                    selected <% } %>
+                                        >Not Placed</option>
+                                <option value="On Hold" <% if (allocatedInterviews[i].placement==="On Hold" ) { %>
+                                    selected
+                                    <% } %>>On Hold
+                                </option>
+                                <option value="Pending" <% if (allocatedInterviews[i].placement==="Pending" ) { %>
+                                    selected
+                                    <% } %>>Pending
+                                </option>
+                            </select>
+                        </td>
+                        <td id="update-user-interviewData">
+                            <i onclick="updateInterviewsData(this)" id="<%= allocatedInterviews[i].id %>"
+                                title="Update user data" class="fa-solid fa-file-pen"></i>
+                        </td>
+                    </tr>
+                    <% } %>
+                        <% } %>
+        </tbody>
+
+    </table>
+</div>
+
+<script src="/js/student.js"></script>

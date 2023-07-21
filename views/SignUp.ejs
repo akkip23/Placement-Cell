@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/SignUp.css">
+</head>
+
+<body>
+    <div class="signUp-body-conatiner">
+        <div id="sign-up-conatiner">
+            <h2>SIGN UP</h2>
+            <form action="/users/createAccount" method="POST">
+                <div>
+                    <div>
+                        <label for="name">Name</label>
+                    </div>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div>
+                    <div>
+                        <label for="email">Email</label>
+                    </div>
+                    <input type="email" id="email" name="email" placeholder="abc@email.com" required>
+                </div>
+                <div>
+                    <div>
+                        <label for="password">Password</label>
+                    </div>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <div>
+                        <label for="Cnfpassword">Confirm Password</label>
+                    </div>
+                    <input type="password" id="Cnfpassword" name="Cnfpassword" required>
+                </div>
+                <div>
+                    <button type="submit">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
