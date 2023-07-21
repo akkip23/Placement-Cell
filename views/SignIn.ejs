@@ -34,6 +34,29 @@
             </form>
         </div>
     </div>
+    <script>
+                        <% if (locals.flash.success && locals.flash.success.length > 0) { %>
+            new Noty({
+                theme: 'relax',
+                type: 'success',
+                layout: 'topRight',
+                text: '<%= locals.flash.success %>',
+                timeout: 1500,
+                progressBar: true
+            }).show();
+                        <% } %>
+            
+                        <% if (locals.flash.error && locals.flash.error.length > 0) { %>
+            new Noty({
+                theme: 'relax',
+                type: 'error',
+                layout: 'topRight',
+                text: '<%= locals.flash.error %>',
+                timeout: 1500,
+                progressBar: true
+            }).show();
+                        <% } %>
+    </script>
 </body>
 
 </html>

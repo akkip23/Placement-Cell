@@ -16,11 +16,11 @@ module.exports.AddNewStudent = async function (req, res) {
     // console.log("isStudent", isStudent);
     if (isStudent == null) {
       await Student.create(req.body).then((student) => {
-        // req.flash("success", "New Student Created Successfully");
+        req.flash("success", "New Student Created Successfully");
         res.redirect("back");
       });
     } else {
-      // req.flash("error", "Stuent already exist with this Mobile number")
+      req.flash("error", "Stuent already exist with this Mobile number");
       res.redirect("back");
     }
   } catch (error) {
@@ -32,7 +32,7 @@ module.exports.deleteStudent = async function (req, res) {
   try {
     await Student.deleteOne({ _id: req.params.id }).then(async () => {
       await ScheduleInterview.deleteOne({ student: req.params.id });
-      // req.flash("success", "Selected student deleted successfully")
+      req.flash("success", "Selected student deleted successfully");
       return res.redirect("back");
     });
   } catch (error) {
@@ -61,7 +61,7 @@ module.exports.savescheduleInterviewData = async function (req, res) {
     }).then((interview) => {
       student.interview.push(interview);
       student.save();
-      // req.flash("success", "inter schedule for")
+      req.flash("success", "interview has been scheduled successfully");
       res.redirect("back");
     });
   } catch (error) {
@@ -71,7 +71,6 @@ module.exports.savescheduleInterviewData = async function (req, res) {
 
 module.exports.viewScheduledInterviews = async function (req, res) {
   const student = await Student.find({}).populate({ path: "interview" });
-  console.log("allocatedInterviews", student[1].interview);
   return res.render("interviews", {
     title: "interviews",
     allocatedInterviews: student,
@@ -84,7 +83,7 @@ module.exports.updateStudentInterviewData = async function (req, res) {
     placement: req.params.result,
   })
     .then(function () {
-      // req.flash("success", "interview data updated successfully !!!")
+      req.flash("success", "interview data updated successfully !!!");
       return res.redirect("/collection/ScheduledInterviews");
     })
     .catch(function (error) {
