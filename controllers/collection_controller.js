@@ -84,7 +84,13 @@ module.exports.updateStudentInterviewData = async function (req, res) {
   })
     .then(function () {
       req.flash("success", "interview data updated successfully !!!");
-      return res.redirect("/collection/ScheduledInterviews");
+      if (req.xhr) {
+        return res.status(200).json({
+          data: {
+            resultUpdated: true,
+          },
+        });
+      }
     })
     .catch(function (error) {
       console.log("error updating student data", error);

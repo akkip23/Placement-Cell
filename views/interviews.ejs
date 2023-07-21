@@ -20,7 +20,7 @@
 
             <% for(let i=0; i < allocatedInterviews.length; i++){ %>
                 <% if(allocatedInterviews[i].interview.length> 0){ %>
-                    <tr id="<%= allocatedInterviews[i].id %>">
+                    <tr>
 
                         <td>
                             <b>
@@ -43,7 +43,7 @@
                             <%= allocatedInterviews[i].interview.map((data)=> data.date).join(", ") %>
                         </td>
                         <td>
-                            <select id="isPlaced" name="placement" required>
+                            <select id="<%= allocatedInterviews[i].id %>" name="placement" required>
 
                                 <option value="Placed" <% if (allocatedInterviews[i].placement==="Placed" ) { %>
                                     selected <% } %>>Placed</option>
