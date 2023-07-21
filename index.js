@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config({ path: "./config.env" });
 //initilizing express and calling all the functionalities of express
 const express = require("express");
 const app = express();
+const port = process.env.PORT;
 const expressLayouts = require("express-ejs-layouts");
 const db = require("./config/mongoose");
 const flash = require("connect-flash");
@@ -56,7 +57,7 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 //app will listen to the below provided port number
-app.listen(8000, (error) => {
+app.listen(port, (error) => {
   if (error) {
     console.log("error connecting to the server");
     return;
