@@ -12,7 +12,7 @@ body{
 #sign-up-conatiner {
     background: white;
     width: 700px;
-    height: 430px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     padding: 30px 0;
