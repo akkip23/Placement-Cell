@@ -1,2 +1,4 @@
+# ignore node module file
 node_modules/
+# ifnore config.env file
 config.env

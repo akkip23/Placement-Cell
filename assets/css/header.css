@@ -1,3 +1,5 @@
+/* styling for header */
+
 #header-container {
   background: linear-gradient(181deg, #d38888, #00000080);
   position: fixed;
@@ -17,18 +19,18 @@
   padding: 0 10px;
 }
 
-#signOut h3 a{
+#signOut h3 a {
   background: red;
   padding: 5px 15px;
   border-radius: 500px;
 }
 
-#loggedIn_user a h4{
+#loggedIn_user a h4 {
   font-size: 1.1rem;
 }
 
-#Applogo img{
-    width: 3rem;
+#Applogo img {
+  width: 3rem;
 }
 
 #searchBar {
@@ -49,15 +51,14 @@
 }
 
 #loginSessions_Create > div {
-margin-right: 15px;
+  margin-right: 15px;
 }
 
-#placement{
+#placement {
   padding: 5px;
 }
 
-#header-container a{
+#header-container a {
   text-decoration: none;
   color: white;
 }
-

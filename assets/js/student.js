@@ -1,3 +1,4 @@
+// using ajax call update user student interviews data
 function updateInterviewsData(id) {
   let studentID = $(id).prop("id");
   let resultData = $(`#${studentID}`).val();
