@@ -24,11 +24,18 @@ module.exports.signUp = function (req, res) {
 //get the sign up data and save to dataBase
 module.exports.CreateAccount = async function (req, res) {
   try {
-    const isStudent = await Student.exists({ email: req.body.email });
-    console.log(isStudent);
-    if (isStudent != null) {
-      req.flash("error", "Student Cannot register to Placement Cell");
-      return res.redirect("back");
+    //check if the question exist in the database
+    try {
+      const userEmail = req.body.email;
+      const users = await Student.find({ email: userEmail });
+      console.log(users);
+      if (users.length != 0) {
+        console.log("i am cumming");
+        req.flash("error", "Student Cannot register to Placement Cell");
+        return res.redirect("back");
+      }
+    } catch (error) {
+      console.error("Error querying the database:", error);
     }
 
     const isUser = await User.exists({ email: req.body.email });

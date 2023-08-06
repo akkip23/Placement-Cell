@@ -8,7 +8,7 @@ module.exports.home = async function (req, res) {
     // console.log("studentData", studentData);
     res.render("home", {
       title: "Placement Cell",
-      studentData: studentData,
+      studentData: studentData, 
     });
   } catch (error) {}
 };
