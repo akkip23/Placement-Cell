@@ -6,7 +6,7 @@ module.exports.signIn = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect("/");
   }
-  return res.render("SignIn", {    
+  return res.render("SignIn", {
     title: "Login",
   });
 };
@@ -16,7 +16,7 @@ module.exports.signUp = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect("/");
   }
-  return res.render("SignUp", {       
+  return res.render("SignUp", {
     title: "Sign up",
   });
 };
@@ -24,18 +24,17 @@ module.exports.signUp = function (req, res) {
 //get the sign up data and save to dataBase
 module.exports.CreateAccount = async function (req, res) {
   try {
-    const isStudent = await Student.exists({ email: req.body.email })
-
+    const isStudent = await Student.exists({ email: req.body.email });
+    console.log(isStudent);
     if (isStudent != null) {
-      req.flash("error", "Student Cannot register to Placement Cell")
+      req.flash("error", "Student Cannot register to Placement Cell");
       return res.redirect("back");
     }
-
 
     const isUser = await User.exists({ email: req.body.email });
     // console.log("req.body", isUser);
     if (isUser != null) {
-      req.flash("error", "Account Already Exist With this Email");      
+      req.flash("error", "Account Already Exist With this Email");
       return res.redirect("back");
     }
 
